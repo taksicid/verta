@@ -1,0 +1,1529 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>VERTA Peyzaj Katalog | Bahçe Tasarım Modelleri</title>
+<meta name="description" content="VERTA Peyzaj katalog sayfası. Site peyzajı, havuz kenarı, kapı girişi, kamelya çevresi, çim biçme, rulo çim ve bahçe tasarımlarını inceleyin.">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#123c2c;
+  --green-dark:#082419;
+  --green-soft:#1f6b45;
+  --gold:#c9a24a;
+  --cream:#f7f4ec;
+  --white:#ffffff;
+  --text:#172018;
+  --muted:#6b746e;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+}
+
+a{
+  text-decoration:none;
+}
+
+.navbar{
+  background:rgba(18,60,44,.97);
+  backdrop-filter:blur(12px);
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+
+.navbar-brand{
+  color:white!important;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo-circle{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),#fff0b4);
+  color:var(--green);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  margin-right:10px;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:var(--green);
+  border:none;
+  border-radius:50px;
+  padding:12px 26px;
+  font-weight:800;
+}
+
+.btn-gold:hover{
+  background:#b78f35;
+  color:white;
+}
+
+.btn-green{
+  background:var(--green);
+  color:white;
+  border-radius:50px;
+  padding:11px 24px;
+  font-weight:800;
+}
+
+.btn-green:hover{
+  background:var(--green-dark);
+  color:white;
+}
+
+.hero{
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+  padding:130px 0 70px;
+  color:white;
+  background:
+    linear-gradient(90deg,rgba(8,36,25,.96),rgba(18,60,44,.72),rgba(18,60,44,.30)),
+    url("https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=1800&auto=format&fit=crop");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(201,162,74,.17);
+  color:#ffe8a6;
+  border:1px solid rgba(201,162,74,.45);
+  padding:9px 16px;
+  border-radius:50px;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(36px,5vw,72px);
+  line-height:1.05;
+  font-weight:900;
+}
+
+.hero p{
+  font-size:18px;
+  max-width:780px;
+  color:#f3f3f3;
+}
+
+.stat-box{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:22px;
+  padding:20px;
+  backdrop-filter:blur(8px);
+}
+
+.stat-box h4{
+  color:var(--gold);
+  font-weight:900;
+  margin:0;
+}
+
+.section{
+  padding:85px 0;
+}
+
+.section-title{
+  color:var(--green);
+  font-weight:900;
+  font-size:clamp(30px,4vw,48px);
+}
+
+.section-sub{
+  color:var(--muted);
+  max-width:850px;
+  margin:auto;
+}
+
+.catalog-shell{
+  background:white;
+  border-radius:34px;
+  padding:26px;
+  box-shadow:0 25px 70px rgba(18,60,44,.12);
+}
+
+.category-tabs{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding-bottom:14px;
+  scrollbar-width:thin;
+}
+
+.category-tab{
+  white-space:nowrap;
+  border:1px solid rgba(18,60,44,.15);
+  background:#f9f7ef;
+  color:var(--green);
+  border-radius:60px;
+  padding:13px 20px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.category-tab:hover,
+.category-tab.active{
+  background:var(--green);
+  color:white;
+}
+
+.active-category-head{
+  background:
+    linear-gradient(90deg,rgba(18,60,44,.94),rgba(18,60,44,.60)),
+    url("banner.png");
+  background-size:cover;
+  background-position:center;
+  border-radius:28px;
+  padding:42px;
+  color:white;
+  margin:18px 0 30px;
+  min-height:260px;
+  display:flex;
+  align-items:end;
+}
+
+.active-category-head h2{
+  font-weight:900;
+  font-size:clamp(28px,4vw,50px);
+}
+
+.active-category-head p{
+  max-width:800px;
+  color:#efefef;
+}
+
+.search-box{
+  position:relative;
+}
+
+.search-box input{
+  border-radius:18px;
+  padding:16px 18px 16px 48px;
+  border:1px solid rgba(18,60,44,.16);
+}
+
+.search-box i{
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--green);
+}
+
+.sub-card{
+  border:1px solid rgba(18,60,44,.10);
+  border-radius:28px;
+  overflow:hidden;
+  background:white;
+  height:100%;
+  box-shadow:0 16px 45px rgba(0,0,0,.07);
+  transition:.25s;
+}
+
+.sub-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 25px 55px rgba(18,60,44,.15);
+}
+
+.sub-img-wrap{
+  position:relative;
+  height:282px;
+  overflow:hidden;
+}
+
+.sub-img-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.sub-card:hover img{
+  transform:scale(1.06);
+}
+
+.sub-label{
+  position:absolute;
+  top:16px;
+  left:16px;
+  background:rgba(18,60,44,.92);
+  color:white;
+  padding:8px 13px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.sub-body{
+  padding:24px;
+}
+
+.sub-body h4{
+  color:var(--green);
+  font-weight:900;
+  font-size:21px;
+}
+
+.sub-body p{
+  color:var(--muted);
+  font-size:14px;
+  min-height:64px;
+}
+
+.feature-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.feature-list span{
+  background:#f3f0e7;
+  color:var(--green);
+  border-radius:50px;
+  padding:7px 11px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.modal-content{
+  border-radius:26px;
+  overflow:hidden;
+}
+
+.modal-header{
+  background:var(--green);
+  color:white;
+}
+
+.modal-title{
+  font-weight:900;
+}
+
+.gallery-item{
+  border-radius:24px;
+  overflow:hidden;
+  background:white;
+  border:1px solid rgba(18,60,44,.10);
+  box-shadow:0 14px 38px rgba(0,0,0,.08);
+  height:100%;
+}
+
+.gallery-item img{
+  width:100%;
+  height:255px;
+  object-fit:cover;
+}
+
+.gallery-item-body{
+  padding:20px;
+}
+
+.gallery-item-body h5{
+  color:var(--green);
+  font-weight:900;
+  font-size:18px;
+}
+
+.selected-panel{
+  background:linear-gradient(135deg,var(--green),var(--green-dark));
+  color:white;
+  border-radius:34px;
+  padding:36px;
+  box-shadow:0 25px 70px rgba(18,60,44,.22);
+}
+
+.selected-list{
+  background:white;
+  color:var(--text);
+  border-radius:24px;
+  padding:20px;
+  min-height:130px;
+}
+
+.selected-list li{
+  margin-bottom:12px;
+  font-size:14px;
+}
+
+.form-control,
+.form-select{
+  border-radius:16px;
+  padding:14px 16px;
+  border:none;
+}
+
+.empty-text{
+  color:#888;
+  font-size:14px;
+}
+
+.process-card{
+  background:white;
+  border-radius:26px;
+  padding:28px;
+  box-shadow:0 15px 40px rgba(0,0,0,.06);
+  height:100%;
+}
+
+.process-card i{
+  color:var(--gold);
+  font-size:36px;
+}
+
+.process-card h5{
+  color:var(--green);
+  font-weight:900;
+  margin-top:16px;
+}
+
+footer{
+  background:var(--green-dark);
+  color:white;
+  padding:45px 0;
+}
+.plant-catalog{
+  background:#F5F5F2;
+  font-family:'Montserrat',sans-serif;
+}
+
+.catalog-badge{
+  background:#0F1F17;
+  color:#C8A870;
+  padding:8px 18px;
+  border-radius:50px;
+  font-weight:800;
+  font-size:13px;
+}
+
+.catalog-title{
+  color:#0F1F17;
+  font-weight:900;
+  margin-top:18px;
+  font-size:42px;
+}
+
+.catalog-desc{
+  color:#666;
+  max-width:760px;
+  margin:10px auto 0;
+}
+
+.plant-filter{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding-bottom:10px;
+}
+
+.filter-btn{
+  border:1px solid #d8d2c5;
+  background:#fff;
+  color:#0F1F17;
+  border-radius:50px;
+  padding:11px 20px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+  background:#0F1F17;
+  color:#fff;
+}
+
+.plant-card{
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+  height:100%;
+}
+
+.plant-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.plant-body{
+  padding:24px;
+}
+
+.plant-type{
+  background:#C8A870;
+  color:#0F1F17;
+  border-radius:50px;
+  padding:6px 13px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.plant-body h4{
+  color:#0F1F17;
+  font-weight:900;
+  margin-top:14px;
+}
+
+.plant-info{
+  color:#666;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.usage-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:15px 0;
+}
+
+.usage-tags span{
+  background:#F1EFE8;
+  color:#0F1F17;
+  padding:7px 11px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.select-plant-btn{
+  background:#0F1F17;
+  color:#fff;
+  border:none;
+  border-radius:50px;
+  padding:12px;
+  width:100%;
+  font-weight:900;
+}
+
+.select-plant-btn:hover{
+  background:#C8A870;
+  color:#0F1F17;
+}
+
+.selected-plants{
+  background:#0F1F17;
+  color:#fff;
+  padding:30px;
+  border-radius:28px;
+}
+
+.selected-plants h4{
+  color:#C8A870;
+  font-weight:900;
+}
+
+.selected-plants li{
+  margin-bottom:8px;
+}
+@media(max-width:768px){
+  .catalog-shell{
+    padding:16px;
+    border-radius:24px;
+  }
+
+  .active-category-head{
+    padding:28px;
+  }
+
+  .sub-img-wrap{
+    height:220px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <span class="logo-circle">V</span>
+      VERTA PEYZAJ
+    </a>
+
+    <div class="d-flex gap-2">
+      <a href="#katalog" class="btn btn-gold btn-sm">Katalog</a>
+      <a href="#talep" class="btn btn-outline-light btn-sm rounded-pill px-3">Teklif Al</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="col-lg-9">
+      <div class="hero-badge">
+        <i class="bi bi-stars"></i>
+        Profesyonel Peyzaj Tasarım Kataloğu
+      </div>
+
+      <h1>Bahçeni görerek seç, VERTA olarak biz tasarlayalım.</h1>
+
+      <p class="mt-4">
+        Site düzenlemesi, havuz kenarı, kapı girişi, kamelya çevresi, çim alan,
+        otomatik sulama, taş yol, aydınlatma ve bakım örneklerini katalogdan incele.
+        Beğendiğin tasarımları seçip doğrudan bize gönder.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3 mt-4">
+        <a href="#katalog" class="btn btn-gold">Kataloğu İncele</a>
+        <a href="#talep" class="btn btn-outline-light rounded-pill px-4 fw-bold">Seçimlerimi Gönder</a>
+      </div>
+
+      <div class="row g-3 mt-5">
+        <div class="col-6 col-md-3">
+          <div class="stat-box">
+            <h4>12</h4>
+            <small>Ana Kategori</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-box">
+            <h4>72+</h4>
+            <small>Alt Tasarım Başlığı</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-box">
+            <h4>300+</h4>
+            <small>Görsel Katalog Alanı</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-box">
+            <h4>WP</h4>
+            <small>Hazır Talep Sistemi</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="katalog">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="section-title">VERTA Peyzaj Kataloğu</h2>
+      <p class="section-sub">
+        Üstten ana hizmet başlığını seç. Aşağıda o başlığa ait alt tasarım alanları görünsün.
+        Her alt başlıkta bir örnek görsel var. Daha fazlasını görmek için galeriye gir.
+      </p>
+    </div>
+
+    <div class="catalog-shell">
+
+      <div id="categoryTabs" class="category-tabs"></div>
+
+      <div id="activeCategoryHead" class="active-category-head">
+        <div>
+          <span class="badge bg-warning text-dark mb-3">Seçili Kategori</span>
+          <h2 id="activeCategoryTitle"></h2>
+          <p id="activeCategoryDesc"></p>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4 align-items-center">
+        <div class="col-lg-8">
+          <div class="search-box">
+            <i class="bi bi-search"></i>
+            <input id="searchInput" onkeyup="renderSubCategories()" type="text" class="form-control" placeholder="Alt başlık ara: çim biçme, havuz, kapı girişi, kamelya...">
+          </div>
+        </div>
+
+        <div class="col-lg-4 text-lg-end">
+          <button onclick="clearSelections()" class="btn btn-outline-danger rounded-pill px-4 fw-bold">
+            <i class="bi bi-trash"></i> Seçimleri Temizle
+          </button>
+        </div>
+      </div>
+
+      <div id="subCategoryArea" class="row g-4"></div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="process-card">
+          <i class="bi bi-grid-3x3-gap"></i>
+          <h5>1. Kategori Seç</h5>
+          <p>Site düzenlemesi, havuz kenarı, çim alan, kapı girişi gibi ana başlıklardan birini seç.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="process-card">
+          <i class="bi bi-images"></i>
+          <h5>2. Görsellere Bak</h5>
+          <p>Alt başlıklardaki örnek tasarımları incele. Daha fazlası için galeriye gir.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="process-card">
+          <i class="bi bi-whatsapp"></i>
+          <h5>3. Talep Gönder</h5>
+          <p>Beğendiğin tasarımları seç, bilgilerini yaz ve WhatsApp üzerinden bize gönder.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0" id="talep">
+  <div class="container">
+    <div class="selected-panel">
+      <div class="row g-4">
+
+        <div class="col-lg-5">
+          <h2 class="fw-bold">Seçilen Tasarımlar</h2>
+          <p>Misafir katalogdan seçim yaptıkça burada listelenir.</p>
+
+          <div class="selected-list">
+            <ul id="selectedList" class="mb-0 ps-3"></ul>
+            <div id="emptySelected" class="empty-text">Henüz tasarım seçilmedi.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input id="name" class="form-control" placeholder="Ad Soyad">
+            </div>
+
+            <div class="col-md-6">
+              <input id="phone" class="form-control" placeholder="Telefon">
+            </div>
+
+            <div class="col-md-6">
+              <input id="location" class="form-control" placeholder="İlçe / Mahalle">
+            </div>
+
+            <div class="col-md-6">
+              <input id="area" class="form-control" placeholder="Alan ölçüsü örn: 250 m²">
+            </div>
+
+            <div class="col-12">
+              <select id="budget" class="form-select">
+                <option value="">Bütçe aralığı seçiniz</option>
+                <option>Ekonomik çözüm</option>
+                <option>Orta seviye kaliteli uygulama</option>
+                <option>Premium tasarım</option>
+                <option>Anahtar teslim proje</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <textarea id="note" class="form-control" rows="4" placeholder="Ek not: Havuz kenarı modern olsun, kapı girişinde palmiye istiyorum, çim alan düzenli olsun..."></textarea>
+            </div>
+
+            <div class="col-12">
+              <button onclick="sendWhatsapp()" class="btn btn-gold w-100">
+                <i class="bi bi-whatsapp"></i> WhatsApp ile Talep Gönder
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="plant-catalog py-5" id="bitki-katalog">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="catalog-badge">VERTA PEYZAJ</span>
+      <h2 class="catalog-title">Bitki Kataloğu</h2>
+      <p class="catalog-desc">
+        Bahçeniz için canlı bitkiler, yapay bitkiler ve ağaç türlerini inceleyin.
+        Beğendiğiniz bitkileri seçerek peyzaj talebinize ekleyin.
+      </p>
+    </div>
+
+    <div class="plant-filter mb-4">
+      <button class="filter-btn active" onclick="filterPlants('all', this)">Tüm Bitkiler</button>
+      <button class="filter-btn" onclick="filterPlants('canli', this)">🌿 Canlı Bitkiler</button>
+      <button class="filter-btn" onclick="filterPlants('yapay', this)">🏡 Yapay Bitkiler</button>
+      <button class="filter-btn" onclick="filterPlants('agac', this)">🌳 Ağaçlar</button>
+    </div>
+
+    <div class="row g-4" id="plantArea"></div>
+
+    <div class="selected-plants mt-5">
+      <h4>Seçilen Bitkiler</h4>
+      <ul id="selectedPlants"></ul>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container text-center">
+    <h5 class="fw-bold">VERTA PEYZAJ</h5>
+    <p class="mb-0">Doğaya değer katan tasarımlar.</p>
+  </div>
+</footer>
+
+<div class="modal fade" id="galleryModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div>
+          <small class="text-warning fw-bold">VERTA PEYZAJ GALERİ</small>
+          <h5 id="modalTitle" class="modal-title"></h5>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body bg-light">
+        <div id="galleryArea" class="row g-4"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const whatsappNumber = "905070777506";
+
+const categories = [
+  {
+    id:"site",
+    title:"Site Düzenlemesi",
+    desc:"Apartman ve site ortak alanları için çim, giriş, yürüyüş yolu, blok çevresi ve bakım düzenlemeleri.",
+    cover:"banner.png",
+    subs:[
+      {
+        title:"Site Giriş Peyzajı",
+        desc:"Giriş kapısı çevresinde prestijli, düzenli ve dikkat çekici karşılama alanı.",
+        img:"sitegiris.png",
+        tags:["Giriş","Palmiye","Aydınlatma"]
+      },
+      {
+        title:"Blok Çevresi Düzenleme",
+        desc:"Apartman blokları etrafında çim, çalı grubu, bordür ve temiz geçiş alanları.",
+        img:"blokgrisi.png",
+        tags:["Blok Çevresi","Çim","Bordür"]
+      },
+      {
+        title:"Site Ortak Alan Çim",
+        desc:"Ortak kullanım alanlarında geniş, bakımlı ve düzenli çim alan uygulaması.",
+        img:"siteortak.png",
+        tags:["Rulo Çim","Bakım","Ortak Alan"]
+      },
+      {
+        title:"Site Yürüyüş Yolu Kenarı",
+        desc:"Yürüyüş yollarının iki yanında bitkilendirme, taş ve aydınlatma düzeni.",
+        img:"yürümeyol.png",
+        tags:["Yol","Taş","Aydınlatma"]
+      },
+      {
+        title:"Çocuk Alanı Çevresi",
+        desc:"Oyun alanı çevresinde güvenli, temiz ve canlı bitkilendirme uygulaması.",
+        img:"cocukalan.png",
+        tags:["Güvenli Alan","Çim","Bitki"]
+      },
+      {
+        title:"Site Bakım Paketi",
+        desc:"Çim biçme, budama, gübreleme, yabancı ot temizliği ve genel bakım.",
+        img:"dsf.png",
+        tags:["Bakım","Budama","Çim Biçme"]
+      }
+    ]
+  },
+
+  {
+    id:"havuz",
+    title:"Havuz Kenarı",
+    desc:"Havuz çevresinde taş zemin, tropikal bitki, palmiye, şezlong alanı ve gece aydınlatması.",
+    cover:"https://images.unsplash.com/photo-1572331165267-854da2b10ccc?q=80&w=1600&auto=format&fit=crop",
+    subs:[
+      {
+        title:"Modern Havuz Kenarı",
+        desc:"Sade taş zemin, net bitki çizgileri ve modern villa havası.",
+        img:"https://images.unsplash.com/photo-1572331165267-854da2b10ccc?q=80&w=1200&auto=format&fit=crop",
+        tags:["Modern","Villa","Taş"]
+      },
+      {
+        title:"Palmiye Havuz Konsepti",
+        desc:"Palmiye ve tropikal bitkilerle sıcak Akdeniz havuz çevresi.",
+        img:"sitegiris.png",
+        tags:["Palmiye","Tropikal","Akdeniz"]
+      },
+      {
+        title:"Şezlong Alanı Peyzajı",
+        desc:"Havuz yanında kullanışlı dinlenme ve güneşlenme alanı düzeni.",
+        img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        tags:["Şezlong","Dinlenme","Konfor"]
+      },
+      {
+        title:"Gece Aydınlatmalı Havuz",
+        desc:"Havuz kenarında gece görünümü için led ve spot aydınlatma.",
+        img:"blokgrisi.png",
+        tags:["Led","Gece","Spot"]
+      },
+      {
+        title:"Doğal Taş Havuz Çevresi",
+        desc:"Traverten, doğal taş ve çakıl geçişleriyle sıcak görünüm.",
+        img:"yürümeyol.png",
+        tags:["Doğal Taş","Traverten","Çakıl"]
+      },
+      {
+        title:"Havuz Çevresi Bitkilendirme",
+        desc:"Kök yapısı uygun, havuz çevresine zarar vermeyen bitki seçimi.",
+        img:"https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=1200&auto=format&fit=crop",
+        tags:["Bitki","Çalı","Bakım"]
+      }
+    ]
+  },
+
+  {
+    id:"giris",
+    title:"Kapı Girişi",
+    desc:"Villa, site, apartman ve iş yeri girişlerinde güçlü ilk izlenim oluşturan peyzaj alanları.",
+    cover:"https://images.unsplash.com/photo-1598902108854-10e335adac99?q=80&w=1600&auto=format&fit=crop",
+    subs:[
+      {
+        title:"Villa Kapı Girişi",
+        desc:"Villa önünde prestijli, temiz ve lüks karşılama alanı.",
+        img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        tags:["Villa","Lüks","Giriş"]
+      },
+      {
+        title:"Site Kapı Girişi",
+        desc:"Site girişlerinde tabela, bitki, taş ve aydınlatma bütünlüğü.",
+        img:"sitegiris.png",
+        tags:["Site","Tabela","Işık"]
+      },
+      {
+        title:"Firma Giriş Peyzajı",
+        desc:"Kurumsal firmalar için düzenli, ciddi ve marka değerini artıran giriş.",
+        img:"blokgrisi.png",
+        tags:["Kurumsal","Firma","Prestij"]
+      },
+      {
+        title:"Taşlı Giriş Yolu",
+        desc:"Kapıdan bina girişine kadar doğal taş ve yürüyüş yolu düzeni.",
+        img:"yürümeyol.png",
+        tags:["Taş Yol","Bordür","Düzen"]
+      },
+      {
+        title:"Palmiye Giriş Tasarımı",
+        desc:"Mersin iklimine uygun palmiye ve Akdeniz bitkileriyle giriş.",
+        img:"https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=1200&auto=format&fit=crop",
+        tags:["Palmiye","Mersin","Akdeniz"]
+      },
+      {
+        title:"Aydınlatmalı Giriş",
+        desc:"Gece fark edilen, güvenli ve estetik giriş alanı.",
+        img:"blokgrisi.png",
+        tags:["Gece","Spot","Led"]
+      }
+    ]
+  },
+
+  {
+    id:"kamelya",
+    title:"Kamelya Çevresi",
+    desc:"Kamelya, pergola, barbekü ve oturma alanlarının çevre peyzaj düzenlemeleri.",
+    cover:"https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1600&auto=format&fit=crop",
+    subs:[
+      {
+        title:"Kamelya Etrafı Peyzaj",
+        desc:"Kamelya çevresinde çim, taş, bitki ve aydınlatma düzeni.",
+        img:"https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1200&auto=format&fit=crop",
+        tags:["Kamelya","Çim","Bitki"]
+      },
+      {
+        title:"Pergola Altı Tasarım",
+        desc:"Pergola altında oturma, gölge ve dekoratif bitki düzeni.",
+        img:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+        tags:["Pergola","Gölge","Oturma"]
+      },
+      {
+        title:"Barbekü Alanı Çevresi",
+        desc:"Barbekü köşesi için taş zemin, bitki ve kullanım alanı.",
+        img:"yürümeyol.png",
+        tags:["Barbekü","Taş","Aile"]
+      },
+      {
+        title:"Oturma Köşesi",
+        desc:"Bahçede sakin, şık ve kullanışlı oturma köşesi tasarımı.",
+        img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        tags:["Oturma","Konfor","Bahçe"]
+      },
+      {
+        title:"Gölgelik Alan Bitkilendirme",
+        desc:"Gölge alanlara uygun dayanıklı ve estetik bitki kullanımı.",
+        img:"https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=1200&auto=format&fit=crop",
+        tags:["Gölge","Bitki","Bakım"]
+      },
+      {
+        title:"Taş Zeminli Kamelya",
+        desc:"Kamelya altında doğal taş, parke veya traverten zemin.",
+        img:"yürümeyol.png",
+        tags:["Zemin","Traverten","Taş"]
+      }
+    ]
+  },
+
+  {
+    id:"cim",
+    title:"Çim ve Bakım",
+    desc:"Rulo çim, tohum çim, çim biçme, çim yenileme ve periyodik bakım uygulamaları.",
+    cover:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600&auto=format&fit=crop",
+    subs:[
+      {
+        title:"Rulo Çim Uygulaması",
+        desc:"Hızlı sonuç veren, estetik ve düzenli yeşil alan uygulaması.",
+        img:"siteortak.png",
+        tags:["Rulo Çim","Hızlı","Yeşil"]
+      },
+      {
+        title:"Çim Biçme Hizmeti",
+        desc:"Site, villa ve bahçelerde düzenli çim biçme hizmeti.",
+        img:"dsf.png",
+        tags:["Biçme","Bakım","Site"]
+      },
+      {
+        title:"Çim Yenileme",
+        desc:"Bozulmuş çim alanların kazıma, tesviye ve yeniden yeşillendirme işlemi.",
+        img:"cocukalan.png",
+        tags:["Yenileme","Tesviye","Çim"]
+      },
+      {
+        title:"Tohum Çim Ekimi",
+        desc:"Uygun toprak hazırlığı sonrası ekonomik çim alan oluşturma.",
+        img:"https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=1200&auto=format&fit=crop",
+        tags:["Tohum","Ekonomik","Toprak"]
+      },
+      {
+        title:"Site Çim Bakımı",
+        desc:"Toplu alanlarda düzenli sulama, biçme ve gübreleme takibi.",
+        img:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop",
+        tags:["Site","Periyodik","Bakım"]
+      },
+      {
+        title:"Bahçe Bakım Paketi",
+        desc:"Budama, gübreleme, yabancı ot temizliği ve genel düzenleme.",
+        img:"dsf.png",
+        tags:["Budama","Gübre","Temizlik"]
+      }
+    ]
+  },
+
+  {
+    id:"tas",
+    title:"Taş ve Yürüyüş Yolu",
+    desc:"Doğal taş, dekoratif çakıl, bahçe yolu, bordür ve sert zemin uygulamaları.",
+    cover:"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1600&auto=format&fit=crop",
+    subs:[
+      {
+        title:"Doğal Taş Yol",
+        desc:"Bahçede doğal ve premium yürüyüş yolu görünümü.",
+        img:"yürümeyol.png",
+        tags:["Doğal Taş","Yol","Premium"]
+      },
+      {
+        title:"Dekoratif Çakıl Alan",
+        desc:"Bitki diplerinde temiz ve modern dekoratif çakıl uygulaması.",
+        img:"cocukalan.png",
+        tags:["Çakıl","Dekor","Temiz"]
+      },
+      {
+        title:"Bahçe Basamakları",
+        desc:"Eğimli alanlarda güvenli ve estetik taş basamak çözümleri.",
+        img:"blokgrisi.png",
+        tags:["Basamak","Eğim","Taş"]
+      },
+      {
+        title:"Bordür Uygulaması",
+        desc:"Çim, taş ve bitki alanlarını birbirinden ayıran düzenli sınırlar.",
+        img:"https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=1200&auto=format&fit=crop",
+        tags:["Bordür","Sınır","Düzen"]
+      },
+      {
+        title:"Traverten Zemin",
+        desc:"Havuz, teras ve giriş alanlarında sıcak doğal taş görünümü.",
+        img:"https://images.unsplash.com/photo-1572331165267-854da2b10ccc?q=80&w=1200&auto=format&fit=crop",
+        tags:["Traverten","Zemin","Havuz"]
+      },
+      {
+        title:"Modern Sert Zemin",
+        desc:"Minimal çizgili, düz ve modern sert peyzaj uygulaması.",
+        img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+        tags:["Modern","Minimal","Zemin"]
+      }
+    ]
+  }
+];
+
+let activeCategoryIndex = 0;
+let selectedItems = [];
+
+function init(){
+  renderTabs();
+  renderActiveCategory();
+  renderSubCategories();
+  renderSelected();
+}
+
+function renderTabs(){
+  const tabArea = document.getElementById("categoryTabs");
+  tabArea.innerHTML = "";
+
+  categories.forEach((cat,index)=>{
+    const btn = document.createElement("button");
+    btn.className = "category-tab" + (index === activeCategoryIndex ? " active" : "");
+    btn.innerHTML = `<i class="bi bi-flower1 me-1"></i> ${cat.title}`;
+    btn.onclick = () => {
+      activeCategoryIndex = index;
+      document.getElementById("searchInput").value = "";
+      renderTabs();
+      renderActiveCategory();
+      renderSubCategories();
+    };
+    tabArea.appendChild(btn);
+  });
+}
+
+function renderActiveCategory(){
+  const cat = categories[activeCategoryIndex];
+
+  document.getElementById("activeCategoryTitle").innerText = cat.title;
+  document.getElementById("activeCategoryDesc").innerText = cat.desc;
+
+  document.getElementById("activeCategoryHead").style.background = `
+    linear-gradient(90deg,rgba(18,60,44,.94),rgba(18,60,44,.60)),
+    url("${cat.cover}")
+  `;
+  document.getElementById("activeCategoryHead").style.backgroundSize = "cover";
+  document.getElementById("activeCategoryHead").style.backgroundPosition = "center";
+}
+
+function renderSubCategories(){
+  const area = document.getElementById("subCategoryArea");
+  const cat = categories[activeCategoryIndex];
+  const search = document.getElementById("searchInput").value.toLowerCase().trim();
+
+  const filtered = cat.subs.filter(sub =>
+    sub.title.toLowerCase().includes(search) ||
+    sub.desc.toLowerCase().includes(search) ||
+    sub.tags.join(" ").toLowerCase().includes(search)
+  );
+
+  area.innerHTML = "";
+
+  if(filtered.length === 0){
+    area.innerHTML = `
+      <div class="col-12">
+        <div class="alert alert-warning rounded-4">
+          Aradığın alt başlık bulunamadı.
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  filtered.forEach((sub,index)=>{
+    area.innerHTML += `
+      <div class="col-md-6 col-xl-4">
+        <div class="sub-card">
+          <div class="sub-img-wrap">
+            <img src="${sub.img}" alt="${sub.title}">
+            <span class="sub-label">${cat.title}</span>
+          </div>
+
+          <div class="sub-body">
+            <h4>${sub.title}</h4>
+            <p>${sub.desc}</p>
+
+            <div class="feature-list">
+              ${sub.tags.map(tag=>`<span>${tag}</span>`).join("")}
+            </div>
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-green flex-fill" onclick="openGallery('${cat.title}','${sub.title}')">
+                Daha Fazlasını Gör
+              </button>
+
+              <button class="btn btn-outline-success rounded-pill px-3" onclick="selectDesign('${cat.title}','${sub.title}','Önizleme Tasarım')">
+                <i class="bi bi-plus-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function openGallery(categoryTitle, subTitle){
+  const modalTitle = document.getElementById("modalTitle");
+  const galleryArea = document.getElementById("galleryArea");
+
+  modalTitle.innerText = `${categoryTitle} / ${subTitle}`;
+
+  const images = [
+    "cocukalan.png",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    "sitegiris.png",
+    "yürümeyol.png",
+    "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1572331165267-854da2b10ccc?q=80&w=1200&auto=format&fit=crop",
+    "blokgrisi.png"
+  ];
+
+  galleryArea.innerHTML = "";
+
+  images.forEach((img,index)=>{
+    const designName = `${subTitle} Model ${index + 1}`;
+
+    galleryArea.innerHTML += `
+      <div class="col-md-6 col-lg-4">
+        <div class="gallery-item">
+          <img src="${img}" alt="${designName}">
+          <div class="gallery-item-body">
+            <h5>${designName}</h5>
+            <p class="small text-muted">
+              ${categoryTitle} kategorisi için uygulanabilir örnek peyzaj tasarım modeli.
+            </p>
+
+            <button class="btn btn-gold w-100" onclick="selectDesign('${categoryTitle}','${subTitle}','Model ${index + 1}')">
+              Bu Tasarımı Seç
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  const modal = new bootstrap.Modal(document.getElementById("galleryModal"));
+  modal.show();
+}
+
+function selectDesign(category, sub, design){
+  const item = {
+    category,
+    sub,
+    design,
+    text:`${category} > ${sub} > ${design}`
+  };
+
+  const exists = selectedItems.some(x => x.text === item.text);
+
+  if(!exists){
+    selectedItems.push(item);
+  }
+
+  renderSelected();
+
+  document.getElementById("talep").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+
+function renderSelected(){
+  const list = document.getElementById("selectedList");
+  const empty = document.getElementById("emptySelected");
+
+  list.innerHTML = "";
+
+  if(selectedItems.length === 0){
+    empty.style.display = "block";
+    return;
+  }
+
+  empty.style.display = "none";
+
+  selectedItems.forEach((item,index)=>{
+    list.innerHTML += `
+      <li>
+        <strong>${item.category}</strong><br>
+        ${item.sub} - ${item.design}
+        <button onclick="removeSelected(${index})" class="btn btn-sm btn-outline-danger rounded-pill ms-2 py-0 px-2">
+          Sil
+        </button>
+      </li>
+    `;
+  });
+}
+
+function removeSelected(index){
+  selectedItems.splice(index,1);
+  renderSelected();
+}
+
+function clearSelections(){
+  selectedItems = [];
+  renderSelected();
+}
+
+function sendWhatsapp(){
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const location = document.getElementById("location").value;
+  const area = document.getElementById("area").value;
+  const budget = document.getElementById("budget").value;
+  const note = document.getElementById("note").value;
+
+  const selectedText = selectedItems.length
+    ? selectedItems.map((x,i)=>`${i+1}. ${x.text}`).join("\n")
+    : "Henüz tasarım seçilmedi.";
+
+  const message =
+`Merhaba VERTA Peyzaj, web sitenizdeki katalog üzerinden peyzaj talebi oluşturmak istiyorum.
+
+Ad Soyad: ${name}
+Telefon: ${phone}
+Konum: ${location}
+Alan Ölçüsü: ${area}
+Bütçe Aralığı: ${budget}
+
+Seçtiğim Tasarımlar:
+${selectedText}
+
+Ek Not:
+${note}`;
+
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url,"_blank");
+}
+
+init();
+</script>
+<script>
+const plants = [
+  {
+    name:"Lavanta",
+    type:"Canlı Bitki",
+    category:["canli"],
+    image:"https://images.unsplash.com/photo-1499002238440-d264edd596ec?q=80&w=1200&auto=format&fit=crop",
+    usage:["Yürüyüş yolu","Havuz kenarı","Taş bahçesi","Akdeniz bahçesi"],
+    care:"Kolay bakım",
+    light:"Tam güneş"
+  },
+  {
+    name:"Begonvil",
+    type:"Canlı Bitki",
+    category:["canli"],
+    image:"begonvil.png",
+    usage:["Duvar önü","Pergola çevresi","Giriş alanı","Villa bahçesi"],
+    care:"Orta bakım",
+    light:"Tam güneş"
+  },
+  {
+    name:"Photinia",
+    type:"Canlı Bitki",
+    category:["canli"],
+    image:"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1200&auto=format&fit=crop",
+    usage:["Çit alanı","Site çevresi","Yol kenarı","Giriş peyzajı"],
+    care:"Kolay bakım",
+    light:"Tam güneş"
+  },
+  {
+    name:"Taflan",
+    type:"Canlı Bitki",
+    category:["canli"],
+    image:"https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?q=80&w=1200&auto=format&fit=crop",
+    usage:["Çit bitkisi","Blok kenarı","Site çevresi","Bahçe sınırı"],
+    care:"Kolay bakım",
+    light:"Güneş / yarı gölge"
+  },
+  {
+    name:"Ortanca",
+    type:"Canlı Bitki",
+    category:["canli"],
+    image:"https://images.unsplash.com/photo-1591454371758-a8a48ff1ddaf?q=80&w=1200&auto=format&fit=crop",
+    usage:["Gölge alan","Villa bahçesi","Saksı düzeni","Duvar önü"],
+    care:"Orta bakım",
+    light:"Yarı gölge"
+  },
+  {
+    name:"Sardunya",
+    type:"Canlı Bitki",
+    category:["canli"],
+    image:"https://images.unsplash.com/photo-1622592296627-3b0c1d7a5f32?q=80&w=1200&auto=format&fit=crop",
+    usage:["Balkon","Saksı","Giriş alanı","Teras"],
+    care:"Kolay bakım",
+    light:"Güneş"
+  },
+
+  {
+    name:"Yapay Palmiye",
+    type:"Yapay Bitki",
+    category:["yapay"],
+    image:"https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
+    usage:["İç mekan","Kafe bahçesi","Ofis girişi","Havuz kenarı"],
+    care:"Bakım istemez",
+    light:"Işık fark etmez"
+  },
+  {
+    name:"Yapay Dikey Bahçe",
+    type:"Yapay Bitki",
+    category:["yapay"],
+    image:"https://images.unsplash.com/photo-1521334884684-d80222895322?q=80&w=1200&auto=format&fit=crop",
+    usage:["Duvar kaplama","Ofis girişi","Kafe dekoru","Tabela arkası"],
+    care:"Bakım istemez",
+    light:"İç / dış mekan"
+  },
+  {
+    name:"Yapay Çim Duvar",
+    type:"Yapay Bitki",
+    category:["yapay"],
+    image:"https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1200&auto=format&fit=crop",
+    usage:["Tabela arkası","Düğün alanı","Kafe duvarı","Fotoğraf alanı"],
+    care:"Bakım istemez",
+    light:"İç / dış mekan"
+  },
+  {
+    name:"Yapay Bambu",
+    type:"Yapay Bitki",
+    category:["yapay"],
+    image:"https://images.unsplash.com/photo-1519331379826-f10be5486c6f?q=80&w=1200&auto=format&fit=crop",
+    usage:["İç mekan","Ofis","Kafe","Restoran"],
+    care:"Bakım istemez",
+    light:"Işık fark etmez"
+  },
+
+  {
+    name:"Washingtonia Palmiyesi",
+    type:"Ağaç",
+    category:["agac"],
+    image:"https://images.unsplash.com/photo-1598902108854-10e335adac99?q=80&w=1200&auto=format&fit=crop",
+    usage:["Site girişi","Villa bahçesi","Havuz kenarı","Yol kenarı"],
+    care:"Az bakım ister",
+    light:"Tam güneş"
+  },
+  {
+    name:"Phoenix Palmiyesi",
+    type:"Ağaç",
+    category:["agac"],
+    image:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop",
+    usage:["Prestij girişleri","Otel peyzajı","Villa bahçesi","Havuz çevresi"],
+    care:"Orta bakım",
+    light:"Tam güneş"
+  },
+  {
+    name:"Zeytin Ağacı",
+    type:"Ağaç",
+    category:["agac"],
+    image:"https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1200&auto=format&fit=crop",
+    usage:["Akdeniz bahçesi","Villa bahçesi","Giriş alanı","Taş bahçesi"],
+    care:"Az bakım",
+    light:"Tam güneş"
+  },
+  {
+    name:"Limon Ağacı",
+    type:"Ağaç",
+    category:["agac"],
+    image:"https://images.unsplash.com/photo-1590502593747-42a996133562?q=80&w=1200&auto=format&fit=crop",
+    usage:["Villa bahçesi","Meyve bahçesi","Giriş yanı","Saksı"],
+    care:"Orta bakım",
+    light:"Tam güneş"
+  },
+  {
+    name:"Oya Ağacı",
+    type:"Ağaç",
+    category:["agac"],
+    image:"https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
+    usage:["Site içi","Yol kenarı","Villa bahçesi","Dekoratif alan"],
+    care:"Kolay bakım",
+    light:"Tam güneş"
+  }
+];
+
+let selectedPlants = [];
+
+function renderPlants(filter="all"){
+  const area = document.getElementById("plantArea");
+  area.innerHTML = "";
+
+  const filteredPlants = filter === "all"
+    ? plants
+    : plants.filter(plant => plant.category.includes(filter));
+
+  filteredPlants.forEach(plant => {
+    area.innerHTML += `
+      <div class="col-md-6 col-lg-4">
+        <div class="plant-card">
+          <img src="${plant.image}" alt="${plant.name}">
+          <div class="plant-body">
+            <span class="plant-type">${plant.type}</span>
+            <h4>${plant.name}</h4>
+
+            <p class="plant-info"><strong>Kullanım Alanları:</strong> ${plant.usage.join(", ")}</p>
+            <p class="plant-info"><strong>Bakım:</strong> ${plant.care}</p>
+            <p class="plant-info"><strong>Işık:</strong> ${plant.light}</p>
+
+            <div class="usage-tags">
+              ${plant.usage.map(item => `<span>${item}</span>`).join("")}
+            </div>
+
+            <button class="select-plant-btn" onclick="selectPlant('${plant.name}')">
+              Bitkiyi Seç
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function filterPlants(filter, btn){
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  renderPlants(filter);
+}
+
+function selectPlant(name){
+  if(!selectedPlants.includes(name)){
+    selectedPlants.push(name);
+  }
+
+  document.getElementById("selectedPlants").innerHTML =
+    selectedPlants.map(item => `<li>${item}</li>`).join("");
+}
+
+renderPlants();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
